@@ -1,12 +1,14 @@
 .App {
   text-align: center;
   padding: 10px;
-  background-color: #b6d1e9;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+body{
+  background-color: #b6d1e9;
 }
 .card{
   margin: 30px auto;
