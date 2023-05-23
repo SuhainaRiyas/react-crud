@@ -1,0 +1,42 @@
+{
+  "users": [
+    {
+      "name": "Test",
+      "email": "test@gmail.com",
+      "phone": "9908089066",
+      "gender": "Male",
+      "languages": {
+        "php": false,
+        "react": true,
+        "angular": true
+      },
+      "id": 1
+    },
+    {
+      "name": "Sample",
+      "email": "sample@gmail.com",
+      "phone": "8809790891",
+      "gender": "Female",
+      "languages": {
+        "php": true,
+        "react": true,
+        "laravel": true,
+        "angular": true,
+        "nodejs": true
+      },
+      "id": 2
+    },
+    {
+      "name": "Test 1",
+      "email": "test1@gmail.com",
+      "phone": "9908089096",
+      "gender": "Male",
+      "languages": {
+        "php": true,
+        "laravel": true,
+        "react": true
+      },
+      "id": 3
+    }
+  ]
+}

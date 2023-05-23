@@ -1,10 +1,27 @@
 .App {
   text-align: center;
+  padding: 10px;
+  background-color: #b6d1e9;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+.card{
+  margin: 30px auto;
+}
+.user-form{
+  text-align: left;
+}
+.btn{
+  margin: 2px;
+}
+.row{
+  margin-right: 0px !important;
+}
+.page-link{
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: no-preference) {
