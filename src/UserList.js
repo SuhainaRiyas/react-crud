@@ -58,8 +58,6 @@ const UserList = () => {
                     <Link to='/user/create' className="btn btn-success" style={{ float: 'right', marginRight: '16px' }}>Add User</Link>
                 </div>
                 <div className="card-body">
-
-
                     <div className="table-responsive">
                         <table className="table table-striped">
                             <thead className="bg-dark text-white">

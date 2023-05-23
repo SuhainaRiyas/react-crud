@@ -18,7 +18,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node -p \"process.env.PROJECT_REMIX_CHAIN || ''\" | grep -E \".+\" && echo \"Starting on Glitch with CI=true...\" && cross-env CI=true react-scripts start || echo \"Starting normal...\" && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
