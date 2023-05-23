@@ -7,7 +7,7 @@ const UserList = () => {
     const [users, setUsers] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
     const [recordsPerPage] = useState(10)
-    
+
     useEffect(() => {
         getUsers()
     }, [])
@@ -53,50 +53,56 @@ const UserList = () => {
     return (
         <div className="container">
             <div className="card" >
+                <div className="card-title">
+                    <h4 style={{marginTop:'10px'}}>User's List</h4>
+                    <Link to='/user/create' className="btn btn-success" style={{ float: 'right', marginRight: '16px' }}>Add User</Link>
+                </div>
                 <div className="card-body">
-                    <h4 className="card-title">User's List</h4>
-                    <Link to='/user/create' className="btn btn-success" style={{ float: 'right', margin: '5px' }}>Add User</Link>
-                    <table className="table table-striped">
-                        <thead className="bg-dark text-white">
-                            <tr>
-                                <th>S.No</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone No</th>
-                                <th>Gender</th>
-                                <th>Programming languages</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                currentRecords && currentRecords.map((item, index) => (
-                                    <tr key={index}>
-                                        <td>{(currentPage - 1) * recordsPerPage + index + 1}</td>
-                                        <td>{item.name}</td>
-                                        <td>{item.email}</td>
-                                        <td>{item.phone}</td>
-                                        <td>{item.gender}</td>
-                                        <td>
-                                            {
-                                                item.languages && Object.keys(item.languages).filter(key => item.languages[key]).join(', ').toUpperCase()
-                                            }
-                                        </td>
-                                        <td>
-                                            <Link to={`/user/${item.id}`} className="btn btn-sm btn-primary"><i className="fa fa-edit" /></Link>
-                                            <button className="btn btn-sm btn-danger" onClick={() => deleteUser(item.id)}><i className="fa fa-trash" /></button>
-                                        </td>
-                                    </tr>
-                                ))
-                            }
-                        </tbody>
-                    </table>
-                    {
-                        nPages ? <Pagination
-                            nPages={nPages}
-                            currentPage={currentPage}
-                            setCurrentPage={setCurrentPage} /> : null
-                    }
+
+
+                    <div className="table-responsive">
+                        <table className="table table-striped">
+                            <thead className="bg-dark text-white">
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone No</th>
+                                    <th>Gender</th>
+                                    <th>Programming languages</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    currentRecords && currentRecords.map((item, index) => (
+                                        <tr key={index}>
+                                            <td>{(currentPage - 1) * recordsPerPage + index + 1}</td>
+                                            <td>{item.name}</td>
+                                            <td>{item.email}</td>
+                                            <td>{item.phone}</td>
+                                            <td>{item.gender}</td>
+                                            <td>
+                                                {
+                                                    item.languages && Object.keys(item.languages).filter(key => item.languages[key]).join(', ').toUpperCase()
+                                                }
+                                            </td>
+                                            <td>
+                                                <Link to={`/user/${item.id}`} className="btn btn-sm btn-primary"><i className="fa fa-edit" /></Link>
+                                                <button className="btn btn-sm btn-danger" onClick={() => deleteUser(item.id)}><i className="fa fa-trash" /></button>
+                                            </td>
+                                        </tr>
+                                    ))
+                                }
+                            </tbody>
+                        </table>
+                        {
+                            nPages ? <Pagination
+                                nPages={nPages}
+                                currentPage={currentPage}
+                                setCurrentPage={setCurrentPage} /> : null
+                        }
+                    </div>
                 </div>
 
 
